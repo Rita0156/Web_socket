@@ -1,0 +1,16 @@
+# Whenewhere we needd send answer on condition based we use if else conditional statement
+
+example:: wss.on('connection',(socket)=>{
+              console.log('A new connection');
+              socket.send('Hello from product manager')
+              socket.on('message',(msg)=>{
+                console.log("message : "+msg);
+                msg=msg.toString()
+                if(msg=='anything that you recieve'){
+                    socket.send('anything that you want to send')
+                }
+              })
+              socket.on('close',()=>{
+                  console.log('client has disconnected')
+              })
+           })

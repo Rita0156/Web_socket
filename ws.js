@@ -7,4 +7,7 @@ wss.on('connection',(socket)=>{
     socket.on('message',(msg)=>{
         console.log("message : "+msg);
     })
+    socket.on('close',()=>{
+        console.log('client has disconnected')
+    })
 })
